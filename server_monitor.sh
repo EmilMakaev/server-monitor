@@ -10,10 +10,8 @@ THRESHOLD_RAM=90      # RAM usage %
 THRESHOLD_DISK=90     # Root disk usage %
 
 LOCK_FILE="/tmp/server_monitor.lock"
-LOG_FILE="/var/log/server_monitor.log"
 
 # =========[ Initialization ]=========
-exec >> "$LOG_FILE" 2>&1  # Redirect output to log
 echo "=== Monitoring started at $(date) ==="
 
 # Check for bc dependency
