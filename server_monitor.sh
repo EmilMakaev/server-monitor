@@ -55,7 +55,7 @@ if [ "$CPU_ALERT" -eq 1 ] || [ "$RAM_ALERT" -eq 1 ] || [ "$DISK_ALERT" -eq 1 ]; 
 *RAM:* \`${RAM_USAGE%.*}%\` $( [ "$RAM_ALERT" -eq 1 ] && echo "(>${THRESHOLD_RAM}%)" )
 *Disk:* \`${DISK_USAGE}%\` $( [ "$DISK_ALERT" -eq 1 ] && echo "(≥${THRESHOLD_DISK}%)" )
 
-Time: \`$(date)\`"
+Time: \`$(date +"%I:%M:%S %p %d.%m.%Y")\`"
 
     if curl -s --max-time 10 -X POST "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage" \
         -d chat_id="$TELEGRAM_CHAT_ID" \
