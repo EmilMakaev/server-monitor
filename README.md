@@ -78,6 +78,4 @@ Set up cron to run every 5 minutes:
 
 (crontab -l 2>/dev/null; echo "*/5 * * * * /opt/server_monitor.sh >/dev/null 2>&1") | crontab -
 
----
-
 ```
