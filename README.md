@@ -54,6 +54,11 @@ The script automatically maintains its lockfile and requires no ongoing maintena
 
 ## ⚙️ Configuration
 
+Install bc.
+sudo apt install bc
+OR
+sudo dnf install bc
+
 Edit these variables in the script:
 
 ```bash

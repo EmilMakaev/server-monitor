@@ -16,7 +16,7 @@ echo "=== Monitoring started at $(date) ==="
 
 # Check for bc dependency
 if ! command -v bc &>/dev/null; then
-    echo "Error: Please install bc (sudo apt install bc or sudo dnf install bc)"
+    echo "Error: Please install bc (sudo apt install bc OR sudo dnf install bc)"
     exit 1
 fi
 
