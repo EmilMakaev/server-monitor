@@ -76,31 +76,8 @@ chmod +x /opt/server_monitor.sh
 
 Set up cron to run every 5 minutes:
 
-(crontab -l ; echo "_/5 _ \* \* \* /opt/server_monitor.sh >/dev/null 2>&1") | crontab -
+(crontab -l 2>/dev/null; echo "*/5 * * * * /opt/server_monitor.sh >/dev/null 2>&1") | crontab -
+
 ---
 
-
-
-
-////////////
-
-crontab -e
-
-_/5 _ \* \* \* /opt/server_monitor.sh >/dev/null 2>&1
-
-or
-(crontab -l 2>/dev/null; echo "_/5 _ \* \* \* /usr/local/bin/server_monitor.sh") | crontab -
-
-// check functionality
-stress-ng --cpu 1 --vm 1 --vm-bytes 500M --timeout 30s
-
-/opt/server_monitor.sh
-
-# 1. Clearing logs
-
-sudo journalctl --vacuum-size=200M
-
-# 2. Clearing apt cache
-
-sudo apt-get clean
 ```
